@@ -21,7 +21,7 @@ type GasStation struct {
 func NewGasStation(ships []*Ferry, destination GasDestination) *GasStation {
 	return &GasStation{
 		Name:         "Pom Bensin",
-		Code:         "P",
+		Code:         "G",
 		Destination:  destination,
 		enterChannel: make(chan *Car),
 		Ships:        ships,

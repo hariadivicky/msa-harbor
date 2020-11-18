@@ -31,7 +31,7 @@ type Gate struct {
 func NewGate(ships []*Ferry, staffs []*Staff, destination GateDestination) *Gate {
 	return &Gate{
 		Name:         "Gerbang Masuk",
-		Code:         "G",
+		Code:         "A",
 		Ships:        ships,
 		Staffs:       staffs,
 		Destination:  destination,
