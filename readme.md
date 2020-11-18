@@ -46,25 +46,26 @@ output untuk satu kendaraan :
 
 ```sh
 tekan CTRL + C untuk menampilkan laporan
-[G - Gerbang Masuk] mobil masuk: 
+[A - Gerbang Masuk] mobil masuk: 
 jenis=truck 
-ukuran=small 
-muatan=human 
-sisa_bahan_bakar=6.4%
+ukuran=besar 
+muatan=barang 
+sisa_bahan_bakar=6.4% 
+jenis_bahan_bakar=minyak
 
-[hariadi]: menerima jasa parkir 
+[vicky]: menerima jasa parkir 
 tiket mobil diparkir=60000.00 
-diterima=6000.00 (10.00%) 
-total penghasilan=6000.00
+diterima=6600.00 (11.00%) 
+total penghasilan=6600.00
 
-[P - Pom Bensin]: bahan bakar saat ini: 7.0L dari 110.0L (6.4%)
-[C - Bea Cukai]: pemeriksaan isi kargo: kargo terbuka
+[G - Pom Bensin]: bahan bakar saat ini: 7.0L dari 110.0L (6.4%)
+[C - Bea Cukai]: pemeriksaan isi kargo: kargo tertutup
 
 Rute yang telah dilewati:
 |
-G - Gerbang Masuk
+A - Gerbang Masuk
 |
-P - Pom Bensin
+G - Pom Bensin
 |
 C - Bea Cukai
 |
