@@ -19,9 +19,10 @@ func newAsset() ([]*Ferry, []*Staff) {
 	ships := []*Ferry{
 		NewSmallFerry(),
 		NewLargeFerry(),
+		NewEcoFerry(),
 	}
 
-	people := []*Staff{NewStaff("hariadi", 10)}
+	people := []*Staff{NewStaff("hariadi", 10), NewStaff("vicky", 11)}
 
 	return ships, people
 }
@@ -35,12 +36,15 @@ func NewHarbor() *Harbor {
 	gasDestination := GasDestination{BeaCukai: beaCukai}
 	gasStation := NewGasStation(ships, gasDestination)
 
+	batteryStation := NewBatteryStation(ships)
+
 	gateDestination := GateDestination{
-		BeaCukai:   beaCukai,
-		GasStation: gasStation,
+		BeaCukai:       beaCukai,
+		GasStation:     gasStation,
+		BatteryStation: batteryStation,
 	}
 	gate := NewGate(ships, people, gateDestination)
-	places := []Place{gate, gasStation, beaCukai}
+	places := []Place{gate, gasStation, batteryStation, beaCukai}
 
 	return &Harbor{ships, people, places}
 }
