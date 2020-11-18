@@ -12,8 +12,9 @@ var ErrNoFerryFound = errors.New("no ferry that can accept this car")
 
 // GateDestination defines destination list of gates.
 type GateDestination struct {
-	GasStation *GasStation
-	BeaCukai   *BeaCukai
+	GasStation     *GasStation
+	BeaCukai       *BeaCukai
+	BatteryStation *BatteryStation
 }
 
 // Gate defines a starting point to harbor.
@@ -56,7 +57,13 @@ func (gate *Gate) Open() {
 
 		// the car must be fueled if current fuel is less than 10%.
 		if car.FuelPercentage() < 10 {
-			car.MoveTo(gate.Destination.GasStation)
+			switch car.FuelType {
+			case FuelPetrol:
+				car.MoveTo(gate.Destination.GasStation)
+			case FuelBattery:
+				car.MoveTo(gate.Destination.BatteryStation)
+			}
+
 			continue
 		}
 

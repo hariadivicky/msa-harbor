@@ -50,6 +50,16 @@ func NewLargeFerry() *Ferry {
 	return NewFerry("Ferry Besar", "L", 6, acceptedCars, ticketPrices)
 }
 
+// NewEcoFerry creates a eco ferry.
+func NewEcoFerry() *Ferry {
+	ticketPrices := []TicketPrice{
+		{CarKind: KindEco, Price: 10000},
+	}
+	acceptedCars := []CarKind{KindEco}
+
+	return NewFerry("Eco Ferry", "E", 8, acceptedCars, ticketPrices)
+}
+
 // CanAccept checks if ferry can load current kind of car.
 func (ferry *Ferry) CanAccept(car *Car) bool {
 	for _, accepted := range ferry.acceptedCars {
